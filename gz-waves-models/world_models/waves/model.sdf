@@ -14,7 +14,7 @@
         <tile_size>256</tile_size>
         <cell_count>256</cell_count>
         <wind_speed>5.0</wind_speed>
-        <wind_angle_deg>135</wind_angle_deg>
+        <wind_angle_deg>0</wind_angle_deg>
         <steepness>2</steepness>
       </wave>
     </plugin>
@@ -26,10 +26,6 @@
             <uri>materials/mesh_L256m_N256.dae</uri>
           </mesh>
         </geometry>
-        <!-- 
-          Uncomment material if using DYNAMIC_GEOMETRY which uses PBS
-          rather than a custom shader
-        -->
         <material>
           <ambient>0.0 0.05 0.8 0.92</ambient>
           <diffuse>0.0 0.1 0.7 0.92</diffuse>
@@ -45,7 +41,6 @@
           </pbr>
         </material>
 
-        <!-- \todo remove duplicate params; populate from service instead -->
         <plugin
             filename="gz-waves1-waves-visual-system"
             name="gz::sim::systems::WavesVisual">
@@ -54,27 +49,17 @@
           <tiles_x>-0 0</tiles_x>
           <tiles_y>-0 0</tiles_y>
           <wave>
-            <!-- `fft` wave parameters -->
             <algorithm>fft</algorithm>
             <tile_size>256</tile_size>
             <cell_count>256</cell_count>
             <wind_speed>5.0</wind_speed>
-            <wind_angle_deg>135</wind_angle_deg>
+            <wind_angle_deg>0</wind_angle_deg>
             <steepness>2</steepness>
           </wave>
-
-          <!--
-            The section below for shaders is ignored when using
-            DYNAMIC_TEXTURE
-          -->
-
-          <!-- shader program -->
           <shader language="metal">
             <vertex>materials/waves_vs.metal</vertex>
             <fragment>materials/waves_fs.metal</fragment>
           </shader>
-
-          <!-- vertex shader params -->
           <param>
             <shader>vertex</shader>
             <name>world_matrix</name>
@@ -110,8 +95,6 @@
             <name>t</name>
             <value>TIME</value>
           </param>
-
-          <!-- pixel shader params -->
           <param>
             <shader>fragment</shader>
             <name>deepColor</name>

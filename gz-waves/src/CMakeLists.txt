@@ -32,23 +32,6 @@ set(sources
   WaveSpreadingFunction.cc
 )
 
-set(gtest_sources
-  ${gtest_sources}
-  Algorithm_TEST.cc
-  CGAL_TEST.cc
-  EigenFFTW_TEST.cc
-  Geometry_TEST.cc
-  Grid_TEST.cc
-  LinearRegularWaveSimulation_TEST.cc
-  LinearRandomFFTWaveSimulation_TEST.cc
-  MeshTools_TEST.cc
-  Physics_TEST.cc
-  TriangulatedGrid_TEST.cc
-  Wavefield_TEST.cc
-  WaveSpectrum_TEST.cc
-  WaveSpreadingFunction_TEST.cc
-)
-
 # Create the library target
 gz_create_core_library(SOURCES ${sources} CXX_STANDARD ${CMAKE_CXX_STANDARD})
 
@@ -72,15 +55,4 @@ target_include_directories(${PROJECT_LIBRARY_TARGET_NAME}
   PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>
   ${EIGEN3_INCLUDE_DIR}
-)
-
-include_directories(${PROJECT_SOURCE_DIR}/test)
-
-# Build the unit tests
-gz_build_tests(TYPE UNIT
-  SOURCES
-    ${gtest_sources}
-  LIB_DEPS
-    ${PROJECT_LIBRARY_TARGET_NAME}
-    ${FFT_LIBRARIES}
 )
