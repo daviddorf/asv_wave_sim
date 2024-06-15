@@ -30,7 +30,7 @@
     <plugin filename="gz-sim-imu-system"
             name="gz::sim::systems::Imu">
     </plugin>
-    <!-- <plugin filename="gz-sim-wind-effects-system"
+    <plugin filename="gz-sim-wind-effects-system"
             name="gz::sim::systems::WindEffects">
       <force_approximation_scaling_factor>1.0</force_approximation_scaling_factor>
       <horizontal>
@@ -63,7 +63,7 @@
          <stddev>0.03</stddev>
         </noise>
       </vertical>
-    </plugin> -->
+    </plugin>
 
     <scene>
       <ambient>1.0 1.0 1.0</ambient>
@@ -79,10 +79,10 @@
       <specular>0.6 0.6 0.6 1</specular>
       <direction>-0.5 0.1 -0.9</direction>
     </light>
-<!-- 
+
     <wind>
       <linear_velocity>0 2 0</linear_velocity>
-    </wind> -->
+    </wind>
 
     <include>
       <uri>model://waves</uri>
