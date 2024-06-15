@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.6">
-  <world name="waves">
+  <world name="beach_world">
     <model name="beach">
         <pose>50 0 -2 0 0 1.57</pose>
         <include> <uri> https://fuel.gazebosim.org/1.0/OpenRobotics/models/Beach </uri> </include>
@@ -73,6 +73,7 @@
     </scene>
 
     <light type="directional" name="sun">
+      <pose>0 0 10000 0 0 0</pose>
       <cast_shadows>false</cast_shadows>
       <pose>0 0 10 0 0 0</pose>
       <diffuse>0.8 0.8 0.8 1</diffuse>
