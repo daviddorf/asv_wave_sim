@@ -91,7 +91,7 @@
 
     <include>
       <pose>5 0 0 0 0 0</pose>
-      <uri>model://wam-v</uri>
+      <uri>model://wamv</uri>
     </include>
 
   </world>
