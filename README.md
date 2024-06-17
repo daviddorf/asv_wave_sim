@@ -46,7 +46,7 @@ colcon build --merge-install
 In your workspace (where src, build, install, and log are), run the following commands:
 ```bash
 source src/asv_wave_sim/setup.sh
-gz sim waves_wind.sdf
+gz sim beach_world.sdf
 ```
 
 
